@@ -1,62 +1,94 @@
-Housing Price Prediction Model
+# Housing Price Prediction Model
 
-This project is an end-to-end data science pipeline that builds and evaluates a machine learning model to predict housing prices. The analysis is performed in a Jupyter Notebook, demonstrating key skills in data cleaning, exploratory data analysis (EDA), feature engineering, and model evaluation.
-Dataset
+This repository contains a Jupyter Notebook (`Housing.ipynb`) for predicting housing prices using various regression techniques and data preprocessing methods. The notebook demonstrates a complete workflow—from loading the dataset, performing exploratory data analysis (EDA), feature engineering, encoding categorical variables, to training and evaluating a regression model.
 
-The dataset used in this project is from the Housing.csv file. It contains various features related to residential properties, including:
+## Overview
 
-    Continuous variables: price, area, bedrooms, bathrooms, stories, parking
+The notebook covers the following steps:
 
-    Categorical variables: mainroad, guestroom, basement, hotwaterheating, airconditioning, prefarea, furnishingstatus
+1. **Data Loading & Exploration**
+   - Loads housing data from `Housing.csv`.
+   - Displays the first few rows to understand the features.
 
-Project Workflow
+2. **Exploratory Data Analysis (EDA)**
+   - Visualizes numerical features (`area`, `bedrooms`, `stories`, `parking`) using boxplots to identify outliers.
+   - Shows distribution of features with histograms.
+   - Displays a correlation matrix heatmap to understand relationships between variables.
 
-    Data Loading & Initial Exploration: The project begins by loading the dataset into a Pandas DataFrame and performing initial checks to understand its structure and content.
+3. **Data Preprocessing**
+   - One-hot encodes categorical variables: `mainroad`, `furnishingstatus`, `guestroom`, `hotwaterheating`, `prefarea`, `basement`, `airconditioning`.
+   - Feature engineering: creates new features such as `total_rooms`, `price_per_sqft`, and `area_air`.
 
-    Data Preprocessing:
+4. **Model Preparation**
+   - Splits the data into features (`X`) and target (`Y` - price).
+   - Applies polynomial feature transformation for regression.
+   - Splits the dataset into training and test sets.
+   - Scales the features using `StandardScaler`.
 
-        One-Hot Encoding: Categorical features (e.g., mainroad, furnishingstatus) are converted into numerical format using pd.get_dummies().
-        
-        Feature Engineering: New, more informative features are created from the existing data, such as total_rooms and price_per_sqft. This step enhances the predictive power of the model.
+5. **Model Training & Evaluation**
+   - Trains a `LinearRegression` model on polynomial features.
+   - Evaluates the model using metrics like Mean Squared Error (MSE), R² score, and Mean Absolute Error.
 
-    Model Training:
-        
-        The data is split into training and testing sets to ensure the model is evaluated on unseen data.
+## Usage
 
-        The Training data is fitted to poloynomial regression to get more inshights and increase the model accuracy
-        
-        A Linear Regression model from Scikit-learn is trained on the prepared data.
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/AryanG111/-Housing-Price-Prediction-Model.git
+   cd -Housing-Price-Prediction-Model
+   ```
 
-    Model Evaluation: The performance of the trained model is assessed using standard regression metrics:
+2. **Open the Notebook**
+   - Make sure you have Jupyter Notebook installed.
+   - Open `Housing.ipynb` in JupyterLab or Jupyter Notebook:
+     ```bash
+     jupyter notebook Housing.ipynb
+     ```
 
-        Mean Absolute Error (MAE): 407922.04
+3. **Install Dependencies**
+   - The notebook uses the following Python libraries:
+     - pandas
+     - seaborn
+     - matplotlib
+     - numpy
+     - scikit-learn
 
-        Mean Squared Error (MSE): 312689084190.72
+   - Install missing dependencies:
+     ```bash
+     pip install pandas seaborn matplotlib numpy scikit-learn
+     ```
 
-        Root Mean Squared Error (RMSE): 559186.09
+4. **Run the Notebook**
+   - Step through the cells in order to reproduce the analysis and results.
 
-        R-squared (R²): 0.93
+## File Description
 
-Technologies Used
+- `Housing.ipynb`: Main notebook containing code for EDA, preprocessing, feature engineering, modeling, and evaluation.
+- `Housing.csv`: The dataset used for training and testing the model (make sure this file is in the project directory).
 
-    Python
+## Features Used
 
-    Pandas: For data manipulation and analysis.
+- **Numerical:** `area`, `bedrooms`, `bathrooms`, `stories`, `parking`
+- **Categorical:** `mainroad`, `guestroom`, `basement`, `hotwaterheating`, `airconditioning`, `prefarea`, `furnishingstatus`
+- **Engineered:** `total_rooms`, `price_per_sqft`, `area_air`
 
-    NumPy: For numerical operations.
+## Model
 
-    Scikit-learn: For machine learning model building and evaluation.
+- Polynomial Regression using `LinearRegression` from scikit-learn.
+- Feature scaling and train-test splitting included.
 
-    Seaborn & Matplotlib: For data visualization.
+## Visualization
 
-How to Run the Project
+- Boxplots and histograms for feature distribution.
+- Heatmap for feature correlation.
 
-To run this project, you will need to have Python and the necessary libraries installed.
+## License
 
-    Clone this repository to your local machine.
+This project is for educational purposes.
 
-    Ensure you have the Housing.csv file in the same directory as the Jupyter Notebook.
+## Author
 
-    Open Housing.ipynb in a Jupyter Notebook environment.
+- AryanG111
 
-    Run all cells to execute the entire analysis and see the results.
+---
+
+Feel free to open issues or submit pull requests for improvements!
