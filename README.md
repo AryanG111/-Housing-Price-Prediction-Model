@@ -16,24 +16,26 @@ Project Workflow
     Data Preprocessing:
 
         One-Hot Encoding: Categorical features (e.g., mainroad, furnishingstatus) are converted into numerical format using pd.get_dummies().
-
+        
         Feature Engineering: New, more informative features are created from the existing data, such as total_rooms and price_per_sqft. This step enhances the predictive power of the model.
 
     Model Training:
-
+        
         The data is split into training and testing sets to ensure the model is evaluated on unseen data.
 
+        The Training data is fitted to poloynomial regression to get more inshights and increase the model accuracy
+        
         A Linear Regression model from Scikit-learn is trained on the prepared data.
 
     Model Evaluation: The performance of the trained model is assessed using standard regression metrics:
 
-        Mean Absolute Error (MAE): 572328.50
+        Mean Absolute Error (MAE): 407922.04
 
-        Mean Squared Error (MSE): 699499275752.20
+        Mean Squared Error (MSE): 312689084190.72
 
-        Root Mean Squared Error (RMSE): 836360.73
+        Root Mean Squared Error (RMSE): 559186.09
 
-        R-squared (R²): 0.86
+        R-squared (R²): 0.93
 
 Technologies Used
 
